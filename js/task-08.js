@@ -10,10 +10,11 @@ function submitHandler(event) {
   const password = event.currentTarget.elements.password;
   if (email.value === "" || password.value === "") {
     alert("Всі поля повинні бути заповнені!");
-  } else {
-    profile.email = email.value;
-    profile.password = password.value;
+    return;
   }
+  profile.email = email.value;
+  profile.password = password.value;
+
   console.log(profile);
   event.currentTarget.reset();
 }
